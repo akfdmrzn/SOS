@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseBackHeaderView" customModule="Sos" customModuleProvider="target">
+            <connections>
+                <outlet property="btnLeftMenu" destination="sdW-2z-tjB" id="euW-Pm-BPe"/>
+                <outlet property="contentView" destination="IyX-cd-39C" id="AxB-OZ-IB5"/>
+                <outlet property="imageViewBackground" destination="aTR-ZL-hOj" id="kf6-JV-3nf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="IyX-cd-39C">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aTR-ZL-hOj">
+                    <rect key="frame" x="0.0" y="0.0" width="438" height="80"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sdW-2z-tjB">
+                    <rect key="frame" x="20" y="40" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="m4U-8S-igM"/>
+                        <constraint firstAttribute="height" constant="20" id="yne-Jc-IEZ"/>
+                    </constraints>
+                    <state key="normal" image="backBtn"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.91372549020000005" green="0.38431372549999998" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aTR-ZL-hOj" firstAttribute="top" secondItem="IyX-cd-39C" secondAttribute="top" id="BIk-ft-ufG"/>
+                <constraint firstItem="sdW-2z-tjB" firstAttribute="leading" secondItem="dwA-e1-Ugd" secondAttribute="leading" constant="20" id="FL0-BY-8G3"/>
+                <constraint firstItem="sdW-2z-tjB" firstAttribute="top" secondItem="IyX-cd-39C" secondAttribute="top" constant="40" id="Oqd-jH-PWZ"/>
+                <constraint firstItem="aTR-ZL-hOj" firstAttribute="leading" secondItem="IyX-cd-39C" secondAttribute="leading" id="dgk-2C-Axh"/>
+                <constraint firstAttribute="bottom" secondItem="aTR-ZL-hOj" secondAttribute="bottom" id="g39-2V-3mR"/>
+                <constraint firstAttribute="trailing" secondItem="aTR-ZL-hOj" secondAttribute="trailing" id="s1Z-q7-dqw"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="dwA-e1-Ugd"/>
+            <point key="canvasLocation" x="420" y="474"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="backBtn" width="32" height="32"/>
+    </resources>
+</document>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseHeaderViewCircle" customModule="Sos" customModuleProvider="target">
+            <connections>
+                <outlet property="btnBasket" destination="ryy-hL-axq" id="Ffm-q6-jPx"/>
+                <outlet property="btnCallService" destination="UcK-Kd-6pY" id="yTu-to-p5u"/>
+                <outlet property="btnLeftMenu" destination="NHJ-Y3-eaD" id="9La-JT-eve"/>
+                <outlet property="btnLogin" destination="Xk4-7u-MmW" id="zIM-80-a6l"/>
+                <outlet property="btnLogout" destination="YAI-YJ-oyL" id="p4o-fB-BB7"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="XsL-KZ-2MD"/>
+                <outlet property="imageViewBackground" destination="rjW-Ty-iJu" id="4ck-kt-00K"/>
+                <outlet property="labelAskService" destination="JSH-Sm-Sy5" id="QJc-Ev-v6m"/>
+                <outlet property="labelBasket" destination="9aX-jd-6wP" id="yhW-Y0-xlv"/>
+                <outlet property="labelLogin" destination="lJQ-ii-E9k" id="oQl-Fq-fao"/>
+                <outlet property="labelLogout" destination="zDQ-kQ-Z4g" id="Zwx-QO-Iya"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="154"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="@4xbg-circle-draw" translatesAutoresizingMaskIntoConstraints="NO" id="rjW-Ty-iJu">
+                    <rect key="frame" x="-22" y="0.0" width="482" height="150"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="GHQ-qU-IEU"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sepetim" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aX-jd-6wP">
+                    <rect key="frame" x="295.5" y="67" width="40" height="9.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
+                    <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Garson Çağır" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSH-Sm-Sy5">
+                    <rect key="frame" x="335.5" y="67" width="50" height="9.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="65V-mQ-ZPO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
+                    <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryy-hL-axq">
+                    <rect key="frame" x="303" y="40" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ryy-hL-axq" secondAttribute="height" multiplier="1:1" id="0Rp-bA-DB2"/>
+                    </constraints>
+                    <state key="normal" image="groceries-2"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UcK-Kd-6pY">
+                    <rect key="frame" x="348" y="40" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="UcK-Kd-6pY" secondAttribute="height" multiplier="1:1" id="Kp5-d7-hIb"/>
+                    </constraints>
+                    <state key="normal" image="account-alert-2"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAI-YJ-oyL">
+                    <rect key="frame" x="393" y="40" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="YAI-YJ-oyL" secondAttribute="height" multiplier="1:1" id="M5w-Gi-URf"/>
+                        <constraint firstAttribute="width" constant="25" id="bIl-0t-NmQ"/>
+                    </constraints>
+                    <state key="normal" image="Menu-Exit-2"/>
+                    <connections>
+                        <action selector="btnPressedLogout:" destination="-1" eventType="touchUpInside" id="VcB-ff-SLN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHJ-Y3-eaD">
+                    <rect key="frame" x="20" y="40" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="mV0-hp-ea7"/>
+                        <constraint firstAttribute="width" secondItem="NHJ-Y3-eaD" secondAttribute="height" multiplier="1:1" id="pGs-gL-6Wf"/>
+                    </constraints>
+                    <state key="normal" image="leftmenu"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çıkış Yap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDQ-kQ-Z4g">
+                    <rect key="frame" x="385.5" y="67" width="40" height="9.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="982-bP-ehQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
+                    <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xk4-7u-MmW">
+                    <rect key="frame" x="393" y="40" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="25" id="IaF-t5-3EC"/>
+                        <constraint firstAttribute="width" secondItem="Xk4-7u-MmW" secondAttribute="height" multiplier="1:1" id="j2k-R9-lRN"/>
+                    </constraints>
+                    <state key="normal" image="gırıs-2"/>
+                    <connections>
+                        <action selector="btnPressedLogin:" destination="-1" eventType="touchUpInside" id="s8X-Lb-Lmx"/>
+                        <action selector="btnPressedLogout:" destination="-1" eventType="touchUpInside" id="bHJ-g2-mYb"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giriş Yap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJQ-ii-E9k" userLabel="GirişYap">
+                    <rect key="frame" x="385.5" y="67" width="40" height="9.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="8CR-y1-ANf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
+                    <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menü" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meC-VP-TsO">
+                    <rect key="frame" x="7.5" y="65" width="50" height="9.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="FhX-gJ-ZEd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="8"/>
+                    <color key="textColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="meC-VP-TsO" firstAttribute="top" secondItem="NHJ-Y3-eaD" secondAttribute="bottom" id="5s8-DL-eTc"/>
+                <constraint firstItem="rjW-Ty-iJu" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1.1" id="80B-Lb-SlH"/>
+                <constraint firstItem="lJQ-ii-E9k" firstAttribute="top" secondItem="Xk4-7u-MmW" secondAttribute="bottom" constant="2" id="8hQ-4g-7yf"/>
+                <constraint firstItem="YAI-YJ-oyL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="BjV-7G-iJZ"/>
+                <constraint firstItem="ryy-hL-axq" firstAttribute="width" secondItem="UcK-Kd-6pY" secondAttribute="width" id="Bk4-Bs-rzN"/>
+                <constraint firstItem="Xk4-7u-MmW" firstAttribute="height" secondItem="YAI-YJ-oyL" secondAttribute="height" id="FZp-7L-SVI"/>
+                <constraint firstItem="9aX-jd-6wP" firstAttribute="centerX" secondItem="ryy-hL-axq" secondAttribute="centerX" id="GEB-Zd-kqm"/>
+                <constraint firstItem="Xk4-7u-MmW" firstAttribute="width" secondItem="Xk4-7u-MmW" secondAttribute="height" multiplier="1:1" id="GUD-2q-k36"/>
+                <constraint firstItem="zDQ-kQ-Z4g" firstAttribute="centerX" secondItem="YAI-YJ-oyL" secondAttribute="centerX" id="IT9-Cb-xcA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YAI-YJ-oyL" secondAttribute="trailing" constant="20" id="ItL-0B-vMz"/>
+                <constraint firstItem="Xk4-7u-MmW" firstAttribute="width" secondItem="YAI-YJ-oyL" secondAttribute="width" id="QLR-1u-owe"/>
+                <constraint firstItem="lJQ-ii-E9k" firstAttribute="centerX" secondItem="Xk4-7u-MmW" secondAttribute="centerX" id="QbI-TA-xSQ"/>
+                <constraint firstItem="Xk4-7u-MmW" firstAttribute="centerY" secondItem="YAI-YJ-oyL" secondAttribute="centerY" id="S4T-YL-Myd"/>
+                <constraint firstItem="Xk4-7u-MmW" firstAttribute="centerX" secondItem="YAI-YJ-oyL" secondAttribute="centerX" id="Sss-bV-JJu"/>
+                <constraint firstItem="rjW-Ty-iJu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="T1o-va-ztT"/>
+                <constraint firstItem="ryy-hL-axq" firstAttribute="centerY" secondItem="UcK-Kd-6pY" secondAttribute="centerY" id="TB2-cD-hQl"/>
+                <constraint firstItem="JSH-Sm-Sy5" firstAttribute="centerY" secondItem="zDQ-kQ-Z4g" secondAttribute="centerY" id="TTI-Mw-VZR"/>
+                <constraint firstItem="UcK-Kd-6pY" firstAttribute="leading" secondItem="ryy-hL-axq" secondAttribute="trailing" constant="20" id="VX4-JK-saJ"/>
+                <constraint firstItem="meC-VP-TsO" firstAttribute="centerX" secondItem="NHJ-Y3-eaD" secondAttribute="centerX" id="WLd-6e-Qtr"/>
+                <constraint firstItem="NHJ-Y3-eaD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="baQ-Xy-kb4"/>
+                <constraint firstItem="rjW-Ty-iJu" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="f37-Bb-ncv"/>
+                <constraint firstItem="YAI-YJ-oyL" firstAttribute="leading" secondItem="UcK-Kd-6pY" secondAttribute="trailing" constant="20" id="h9D-pQ-RQS"/>
+                <constraint firstItem="JSH-Sm-Sy5" firstAttribute="leading" secondItem="9aX-jd-6wP" secondAttribute="trailing" id="hKG-Mf-5fr"/>
+                <constraint firstItem="UcK-Kd-6pY" firstAttribute="centerY" secondItem="YAI-YJ-oyL" secondAttribute="centerY" id="iYZ-Ma-yNg"/>
+                <constraint firstItem="zDQ-kQ-Z4g" firstAttribute="top" secondItem="YAI-YJ-oyL" secondAttribute="bottom" constant="2" id="jMI-Vu-Fhu"/>
+                <constraint firstItem="9aX-jd-6wP" firstAttribute="centerY" secondItem="JSH-Sm-Sy5" secondAttribute="centerY" id="lDR-zP-Ja5"/>
+                <constraint firstItem="UcK-Kd-6pY" firstAttribute="width" secondItem="YAI-YJ-oyL" secondAttribute="width" id="ubY-5K-XcK"/>
+                <constraint firstItem="JSH-Sm-Sy5" firstAttribute="centerX" secondItem="UcK-Kd-6pY" secondAttribute="centerX" id="why-Vg-KdK"/>
+                <constraint firstItem="NHJ-Y3-eaD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="z0F-SP-Dbo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="229" y="425"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="@4xbg-circle-draw" width="1500" height="880"/>
+        <image name="Menu-Exit-2" width="52" height="50"/>
+        <image name="account-alert-2" width="50" height="50"/>
+        <image name="groceries-2" width="40" height="50"/>
+        <image name="gırıs-2" width="56" height="50"/>
+        <image name="leftmenu" width="32" height="32"/>
+    </resources>
+</document>
