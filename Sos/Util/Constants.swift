@@ -11,5 +11,6 @@ import Foundation
 class Constants {
     
     static let BASE_SERVICE_URL = "http://services.speedyorderservice.com"
+    static let tlIconString = "₺"
     
 }

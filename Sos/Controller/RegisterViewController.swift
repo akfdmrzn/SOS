@@ -10,7 +10,7 @@ import UIKit
 import Photos
 import UserNotifications
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: BaseViewController {
 
     @IBOutlet weak var headerView: BaseBackHeaderView!
     @IBOutlet weak var textFieldNameSurname: UITextField!
@@ -107,6 +107,9 @@ class RegisterViewController: UIViewController {
                     }
                 }
                 
+            }
+            else{
+                self.showAlertView(message: response.message ?? "",btnCancel: true,btnOkay: false)
             }
         }
         

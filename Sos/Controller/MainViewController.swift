@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class MainViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegate {
+class MainViewController: BaseViewController,AVCaptureMetadataOutputObjectsDelegate {
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
     
@@ -22,12 +22,12 @@ class MainViewController: UIViewController,AVCaptureMetadataOutputObjectsDelegat
     }
 
     @IBAction func btnOrderPressed(_ sender: Any) {
-        self.showReadQrCode()
+//        self.showReadQrCode()
         
-//        let vc = self.sosReturnViewController(type: .MenuViewController) as! MenuViewController
-//        vc.qrCodeTableID = 1
-//        vc.qrCodeRestaurantID = 1
-//        self.sosPushViewController(viewController: vc)
+        let vc = self.sosReturnViewController(type: .MenuViewController) as! MenuViewController
+        vc.qrCodeTableID = 1
+        vc.qrCodeRestaurantID = 1
+        self.sosPushViewController(viewController: vc)
     }
     
     func showReadQrCode(){

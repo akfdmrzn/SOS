@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: BaseViewController {
 
     @IBOutlet weak var btnLogin: UIButton!
     @IBOutlet weak var txtFieldUsername: UITextField!
@@ -55,6 +55,9 @@ class LoginViewController: UIViewController {
                 Defaults().saveRefreshToken(data: response.dataObject!.refreshToken)
                 Defaults().saveToken(data: response.dataObject!.token)
                 self.sosPushViewController(type: .MainViewController)
+            }
+            else{
+                self.showAlertView(message: response.message ?? "",btnCancel: true,btnOkay: false)
             }
         }
     }

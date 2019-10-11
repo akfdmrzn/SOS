@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutUsViewController: UIViewController {
+class AboutUsViewController: BaseViewController {
     @IBOutlet weak var headerView: BaseBackHeaderView!
     
     override func viewDidLoad() {

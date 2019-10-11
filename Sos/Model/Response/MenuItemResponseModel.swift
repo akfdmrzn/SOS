@@ -29,7 +29,7 @@ public class MenuItems : Mappable {
     var id : Int?
     var itemName : String?
     var itemIngredients : String?
-    var price : Int?
+    var price : Double?
     
     required public init?(map: Map) {
         

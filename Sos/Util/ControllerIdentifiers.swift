@@ -12,6 +12,7 @@ enum MainStoryBoardViewController: String {
     case MainViewController = "MainViewController"
     case MenuViewController = "MenuViewController"
     case AboutUsViewController = "AboutUsViewController"
+    case MyOrdersViewController = "MyOrdersViewController"
     case ConnectionViewController = "ConnectionViewController"
     case ProfileViewController = "ProfileViewController"
 }

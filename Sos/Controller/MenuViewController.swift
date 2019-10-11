@@ -9,7 +9,7 @@
 import UIKit
 import ExpyTableView
 
-class MenuViewController: UIViewController {
+class MenuViewController: BaseViewController {
 
     @IBOutlet weak var tableView: ExpyTableView!
     @IBOutlet weak var viewRestaurant: UIView!
@@ -73,7 +73,7 @@ class MenuViewController: UIViewController {
         self.tableView.reloadData()
     }
   
-    @objc func showOrderMenu(name : String,count : String,price : Int){
+    @objc func showOrderMenu(name : String,count : String,price : Double,menuItemId : Int){
         
         self.orderView = OrderInfoView.init(frame: CGRect.init(x: (UIApplication.getTopViewController()?.view.frame.size.width)!, y: 80, width: ((UIApplication.getTopViewController()?.view.frame.size.width)! - 40), height: (((UIApplication.getTopViewController()?.view.frame.size.height)!) / 2) + 50))
         self.orderView?.name = name
@@ -83,10 +83,11 @@ class MenuViewController: UIViewController {
         self.alphaView = UIView.init(frame: (UIApplication.getTopViewController()?.view.frame)!)
         self.alphaView?.backgroundColor = UIColor.clear.withAlphaComponent(0.3)
         self.alphaView!.addSubview(self.orderView!)
-        self.tapGestureAlpha = UITapGestureRecognizer.init(target: self, action: #selector(dissMissOrderMenu))
-        self.alphaView?.addGestureRecognizer(self.tapGestureAlpha!)
         self.orderView?.heightTableViewConstraint.constant = (self.orderView?.tableView.contentSize.height)!
         self.orderView?.tableView.isScrollEnabled = false
+        self.orderView?.qrCodeTableID = qrCodeTableID
+        self.orderView?.qrCodeRestaurantID = qrCodeRestaurantID
+        self.orderView?.menuItemId = menuItemId
         UIApplication.getTopViewController()?.view.addSubview(self.alphaView!)
         UIView.animate(withDuration: 0.7, animations: {
             self.orderView!.frame.origin.x = 20
@@ -95,7 +96,7 @@ class MenuViewController: UIViewController {
         }
     }
     
-    @objc func dissMissOrderMenu(){
+    @objc func dissMissOrderMenu() {
         if (self.orderView != nil) {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
                 self.alphaView?.removeFromSuperview()
@@ -165,7 +166,12 @@ extension MenuViewController : ExpyTableViewDelegate,ExpyTableViewDataSource{
         print("DID SELECT row: \(indexPath.row), section: \(indexPath.section)")
         if indexPath.row != 0 {
             let model =  (self.menuItemResponseModel?.categoryItems?[indexPath.section].menuItems?[indexPath.row - 1])!
-           self.showOrderMenu(name: model.itemName ?? "", count: "1", price: (model.price ?? 0))
+            let putAddMenuItemModel = PutMenuItemRequestModel.init(menuItemId: model.id!, quantity:1, offerNote: "")
+                   NetworkManager.sendHeaderAndBodyRequest(url: Constants.BASE_SERVICE_URL, endPoint: .PutMenuItem, method: .post, headerKeys: ["QRCodeRestaurantId","QRCodeTableId"], headerValues: [String(self.qrCodeRestaurantID),String(self.qrCodeTableID)], requestJsonModel: putAddMenuItemModel) { (response : BaseResponse<MenuItemResponseModel>) in
+                       if response.statu ?? false {
+                            self.showOrderMenu(name: model.itemName ?? "", count: "1", price: (model.price ?? 0),menuItemId : model.id!)
+                       }
+                   }
         }
     }
     

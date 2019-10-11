@@ -113,6 +113,10 @@ public class BaseHeaderViewCircle: UIView {
         let nib = UINib(nibName: nibName, bundle: bundle)
         return nib.instantiate(withOwner: self,options: nil).first as? UIView
     }
+    @IBAction func btnPressedBasket(_ sender: Any) {
+        let vc = UIApplication.getTopViewController()?.sosReturnViewController(type: .MyOrdersViewController) as! MyOrdersViewController
+        UIApplication.getTopViewController()?.sosPushViewController(viewController: vc)
+    }
     
 }
 extension BaseHeaderViewCircle : LeftMenuSelectionDelegate{

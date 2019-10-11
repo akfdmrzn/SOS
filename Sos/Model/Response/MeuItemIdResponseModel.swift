@@ -12,7 +12,7 @@ import ObjectMapper
 struct MeuItemIdResponseModel : Mappable {
     var id : Int?
     var itemName : String?
-    var price : Int?
+    var price : Double?
     var quantity : String?
     var description : String?
     var ingredients : String?

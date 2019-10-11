@@ -153,6 +153,9 @@ public class NetworkManager {
         requestModel.setValue("application/json", forHTTPHeaderField: "Content-Type")
         requestModel.httpMethod = method.rawValue
         
+        let token = Defaults().getToken()
+        requestModel.setValue( "Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+        
         for i in 0...headerKeys.count - 1{
            requestModel.addValue(headerValues[i], forHTTPHeaderField: headerKeys[i])
         }
@@ -181,4 +184,49 @@ public class NetworkManager {
             }
         }
     }
+    
+    public static func sendHeaderAndBodyRequest<T: Mappable>(url:String,endPoint: ServiceEndPoint, method: HTTPMethod, headerKeys: [String],headerValues: [String], requestJsonModel: Mappable, indicatorEnabled: Bool = true,parameters : [String] = [""],
+                                                      completion: @escaping(T) -> ()) {
+           
+           var urlPath = url + endPoint.rawValue
+           for i in 0...parameters.count - 1{
+             urlPath = urlPath.replacingOccurrences(of: "%\(i)", with: parameters[i])
+           }
+           var requestModel = URLRequest(url: URL(string: urlPath)!)
+           requestModel.timeoutInterval = TIMEOUT_INTERVAL
+           requestModel.setValue("application/json", forHTTPHeaderField: "Content-Type")
+           requestModel.httpMethod = method.rawValue
+           let token = Defaults().getToken()
+           requestModel.setValue( "Bearer \(token ?? "")", forHTTPHeaderField: "Authorization")
+           requestModel.httpBody = try? JSONSerialization.data(withJSONObject: requestJsonModel.toJSON(),options: .prettyPrinted)
+        
+           for i in 0...headerKeys.count - 1{
+              requestModel.addValue(headerValues[i], forHTTPHeaderField: headerKeys[i])
+           }
+           
+           
+           let request = requestModel
+           let viewController = UIApplication.getTopViewController()
+           
+           
+           if indicatorEnabled {
+               viewController!.showIndicator(tag: String(describing: request.self))
+           }
+           
+           Alamofire.request(request).responseObject { (response: DataResponse<T>) in
+               if indicatorEnabled {
+                   viewController!.hideIndicator(tag: String(describing: request.self))
+               }
+               
+               switch response.result {
+               case .success(let responseModel):
+                   completion(responseModel)
+                   
+               case .failure(let error as NSError):
+                   viewController!.errorPopup(title: "Warning", message: "An error occurred when requesting", cancelButtonTitle: "OK")
+                   debugPrint(error.description)
+               }
+           }
+       }
+    
 }

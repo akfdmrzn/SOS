@@ -18,10 +18,15 @@ public class OrderInfoView: UIView {
     @IBOutlet weak var btnMakeOrder: UIButton!
     @IBOutlet weak var heightTableViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightTextviewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var txtViewOrderInfo: UITextView!
     
     var name : String?
     var price : String?
     var count : String?
+    
+    var qrCodeRestaurantID = 0
+    var qrCodeTableID = 0
+    var menuItemId = 0
     
     override public func awakeFromNib() {
         super.awakeFromNib()
@@ -92,7 +97,11 @@ public class OrderInfoView: UIView {
 extension OrderInfoView : UITableViewDelegate,UITableViewDataSource{
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MenuItemTableViewCell.identifier, for: indexPath) as! MenuItemTableViewCell
-        cell.setConfigurationModel(name: self.name ?? "", price: self.price ?? "", count: self.count ?? "1",alwaysPrice: Int(self.price!)!)
+        cell.setConfigurationModel(name: self.name ?? "", price: self.price ?? "", count: self.count ?? "1",alwaysPrice: Double(self.price!)!)
+        cell.qrCodeRestaurantId = self.qrCodeRestaurantID
+        cell.qrCodeTableId = self.qrCodeTableID
+        cell.orderNote = self.txtViewOrderInfo.text
+        cell.menuItemID = menuItemId
         return cell
     }
     

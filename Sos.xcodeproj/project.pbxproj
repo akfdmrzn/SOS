@@ -58,6 +58,13 @@
 		BF102897230FDDD5002FFE1E /* LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF102896230FDDD5002FFE1E /* LeftMenuView.swift */; };
 		BF102899230FDDE2002FFE1E /* LeftMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF102898230FDDE2002FFE1E /* LeftMenuView.xib */; };
 		BF10289B230FFD4A002FFE1E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF10289A230FFD4A002FFE1E /* BaseViewController.swift */; };
+		BF13FD802348934C000C5AC2 /* MyOrdersSubTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF13FD7E2348934C000C5AC2 /* MyOrdersSubTableViewCell.swift */; };
+		BF13FD812348934C000C5AC2 /* MyOrdersSubTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF13FD7F2348934C000C5AC2 /* MyOrdersSubTableViewCell.xib */; };
+		BF14967C234C6FDE0037351C /* PutMenuItemRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14967B234C6FDE0037351C /* PutMenuItemRequestModel.swift */; };
+		BF14967E234F16390037351C /* OrderListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14967D234F16390037351C /* OrderListResponseModel.swift */; };
+		BF149680234F1ADF0037351C /* OrderListDetailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14967F234F1ADF0037351C /* OrderListDetailResponseModel.swift */; };
+		BF34E506233E26650076373A /* ExtensionUITextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF34E505233E26650076373A /* ExtensionUITextfield.swift */; };
+		BF34E544234365B90076373A /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF34E543234365B90076373A /* MyOrdersViewController.swift */; };
 		BF4B14F72326216B009FE455 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B14F62326216B009FE455 /* WelcomeViewController.swift */; };
 		BF4B14F92326296F009FE455 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B14F82326296F009FE455 /* LoginViewController.swift */; };
 		BF4B14FB232793E2009FE455 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4B14FA232793E2009FE455 /* MainViewController.swift */; };
@@ -154,6 +161,13 @@
 		BF102896230FDDD5002FFE1E /* LeftMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuView.swift; sourceTree = "<group>"; };
 		BF102898230FDDE2002FFE1E /* LeftMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeftMenuView.xib; sourceTree = "<group>"; };
 		BF10289A230FFD4A002FFE1E /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BF13FD7E2348934C000C5AC2 /* MyOrdersSubTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersSubTableViewCell.swift; sourceTree = "<group>"; };
+		BF13FD7F2348934C000C5AC2 /* MyOrdersSubTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyOrdersSubTableViewCell.xib; sourceTree = "<group>"; };
+		BF14967B234C6FDE0037351C /* PutMenuItemRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PutMenuItemRequestModel.swift; sourceTree = "<group>"; };
+		BF14967D234F16390037351C /* OrderListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListResponseModel.swift; sourceTree = "<group>"; };
+		BF14967F234F1ADF0037351C /* OrderListDetailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListDetailResponseModel.swift; sourceTree = "<group>"; };
+		BF34E505233E26650076373A /* ExtensionUITextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUITextfield.swift; sourceTree = "<group>"; };
+		BF34E543234365B90076373A /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
 		BF4B14F62326216B009FE455 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BF4B14F82326296F009FE455 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF4B14FA232793E2009FE455 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +248,7 @@
 				BF05D9902339E0400043775E /* SendMessageRequestModel.swift */,
 				BF05D994233A0DCD0043775E /* UpdateUserRequestModel.swift */,
 				BF05D996233B7ECB0043775E /* UploadPictureRequestModel.swift */,
+				BF14967B234C6FDE0037351C /* PutMenuItemRequestModel.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -249,6 +264,8 @@
 				BF0CD2EF23325300004A2E06 /* CustomerChangePasswordResponseModel.swift */,
 				BF0CD2F323326143004A2E06 /* MenuItemResponseModel.swift */,
 				BF0CD2F723334757004A2E06 /* MeuItemIdResponseModel.swift */,
+				BF14967D234F16390037351C /* OrderListResponseModel.swift */,
+				BF14967F234F1ADF0037351C /* OrderListDetailResponseModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -330,6 +347,7 @@
 				BF102885230FC508002FFE1E /* ExtensionUIViewController.swift */,
 				BF4B150A23290E4D009FE455 /* ExtensionUIView.swift */,
 				BF0CD2F92334B154004A2E06 /* ExtensionImageView.swift */,
+				BF34E505233E26650076373A /* ExtensionUITextfield.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -354,6 +372,7 @@
 				BF0CD2D9233107D6004A2E06 /* RegisterViewController.swift */,
 				BF05D98C2338A3CF0043775E /* AboutUsViewController.swift */,
 				BF05D98E2338A3E60043775E /* ConnectionViewController.swift */,
+				BF34E543234365B90076373A /* MyOrdersViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -369,6 +388,8 @@
 				BF4B150D23292AA9009FE455 /* LeftMenuTableViewCell.xib */,
 				BF4B1514232B7D2E009FE455 /* MenuItemTableViewCell.swift */,
 				BF4B1515232B7D2E009FE455 /* MenuItemTableViewCell.xib */,
+				BF13FD7E2348934C000C5AC2 /* MyOrdersSubTableViewCell.swift */,
+				BF13FD7F2348934C000C5AC2 /* MyOrdersSubTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -543,6 +564,7 @@
 				BF4B15092328D426009FE455 /* MenuSubTableViewCell.xib in Resources */,
 				BF4B1513232A5B3B009FE455 /* OrderInfoView.xib in Resources */,
 				BF0CD2D0232F7683004A2E06 /* ChangePasswordView.xib in Resources */,
+				BF13FD812348934C000C5AC2 /* MyOrdersSubTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -670,18 +692,23 @@
 				BF0CD2EA233252D6004A2E06 /* PutCustomerRequestModel.swift in Sources */,
 				BF4B150B23290E4D009FE455 /* ExtensionUIView.swift in Sources */,
 				BF05D98F2338A3E60043775E /* ConnectionViewController.swift in Sources */,
+				BF13FD802348934C000C5AC2 /* MyOrdersSubTableViewCell.swift in Sources */,
 				BF05D995233A0DCD0043775E /* UpdateUserRequestModel.swift in Sources */,
 				BF0CD2E023324BA8004A2E06 /* CustomerLoginResponseModel.swift in Sources */,
+				BF34E544234365B90076373A /* MyOrdersViewController.swift in Sources */,
 				BF05D9912339E0400043775E /* SendMessageRequestModel.swift in Sources */,
 				BF05D98D2338A3CF0043775E /* AboutUsViewController.swift in Sources */,
 				BF10288D230FC63F002FFE1E /* Constants.swift in Sources */,
 				BF0CD2DE23324B43004A2E06 /* CustomerLoginRequestModel.swift in Sources */,
 				BF0CD2F223325F1B004A2E06 /* MenuItemRequestModel.swift in Sources */,
+				BF149680234F1ADF0037351C /* OrderListDetailResponseModel.swift in Sources */,
 				BF102887230FC508002FFE1E /* ExtensionUIViewController.swift in Sources */,
 				BF10288F230FC63F002FFE1E /* ControllerIdentifiers.swift in Sources */,
 				BF0CD2EE233252F2004A2E06 /* CustomerChangePasswordRequestModel.swift in Sources */,
 				BF0CD2F823334757004A2E06 /* MeuItemIdResponseModel.swift in Sources */,
 				BF4B150E23292AA9009FE455 /* LeftMenuTableViewCell.swift in Sources */,
+				BF14967E234F16390037351C /* OrderListResponseModel.swift in Sources */,
+				BF14967C234C6FDE0037351C /* PutMenuItemRequestModel.swift in Sources */,
 				BF0CD2FA2334B154004A2E06 /* ExtensionImageView.swift in Sources */,
 				BF0CD2EC233252E1004A2E06 /* PutCustomerResponseModel.swift in Sources */,
 				BF0CD2E423324EDD004A2E06 /* CustomerRefreshTokenResponseModel.swift in Sources */,
@@ -690,6 +717,7 @@
 				BF4B15042328CEE5009FE455 /* MenuTableViewCell.swift in Sources */,
 				BF102884230FC4F8002FFE1E /* BaseResponse.swift in Sources */,
 				BF4B150123279C84009FE455 /* MenuViewController.swift in Sources */,
+				BF34E506233E26650076373A /* ExtensionUITextfield.swift in Sources */,
 				BF0CD2E8233252B6004A2E06 /* GetCustomerResponseModel.swift in Sources */,
 				BF0CD2E223324ECD004A2E06 /* CustomerRefreshTokenRequestModel.swift in Sources */,
 				BF4B15082328D426009FE455 /* MenuSubTableViewCell.swift in Sources */,
@@ -880,12 +908,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P9W6FH8WY3;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N3X78UTWH7;
 				INFOPLIST_FILE = Sos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sos.speedyorderservices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -899,12 +930,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P9W6FH8WY3;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N3X78UTWH7;
 				INFOPLIST_FILE = Sos/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = sos.speedyorderservices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
