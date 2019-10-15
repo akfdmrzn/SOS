@@ -1805,7 +1805,7 @@ E-Mail : info@sos.com</string>
                                                         </constraints>
                                                     </tableView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRR-DM-gpb">
-                                                        <rect key="frame" x="30" y="133" width="120" height="35"/>
+                                                        <rect key="frame" x="30" y="162" width="120" height="35"/>
                                                         <color key="backgroundColor" red="0.88627450980392153" green="0.30588235294117649" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="80D-S5-YXZ"/>
@@ -1816,7 +1816,7 @@ E-Mail : info@sos.com</string>
                                                         </state>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8S-h5-d2R">
-                                                        <rect key="frame" x="204" y="133" width="120" height="35"/>
+                                                        <rect key="frame" x="204" y="162" width="120" height="35"/>
                                                         <color key="backgroundColor" red="0.88627450980392153" green="0.30588235294117649" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="35" id="KJV-mW-d58"/>
@@ -1826,25 +1826,41 @@ E-Mail : info@sos.com</string>
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                     </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toplam :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngy-9o-r6f">
+                                                        <rect key="frame" x="50" y="113" width="61" height="19"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiH-r6-Yab">
+                                                        <rect key="frame" x="297.5" y="113" width="6.5" height="19"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                        <color key="textColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="yiH-r6-Yab" firstAttribute="centerY" secondItem="Ngy-9o-r6f" secondAttribute="centerY" id="0Bc-e0-tsj"/>
                                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="hRR-DM-gpb" secondAttribute="bottom" constant="20" id="0Ut-md-Lam"/>
                                                     <constraint firstItem="zTj-vQ-Nes" firstAttribute="leading" secondItem="tkv-R3-vJZ" secondAttribute="leading" id="0kg-eT-7bS"/>
+                                                    <constraint firstItem="hRR-DM-gpb" firstAttribute="top" secondItem="Ngy-9o-r6f" secondAttribute="bottom" constant="30" id="3aK-Dk-atw"/>
                                                     <constraint firstItem="G8S-h5-d2R" firstAttribute="centerY" secondItem="hRR-DM-gpb" secondAttribute="centerY" id="3fF-Q0-LDS"/>
                                                     <constraint firstItem="z9f-Bz-CMz" firstAttribute="leading" secondItem="DJD-kK-Kw9" secondAttribute="trailing" constant="50" id="6ae-Wy-E3c"/>
                                                     <constraint firstItem="zTj-vQ-Nes" firstAttribute="top" secondItem="tkv-R3-vJZ" secondAttribute="top" id="HGT-eX-Pd6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="yiH-r6-Yab" secondAttribute="trailing" constant="50" id="Hjk-bq-Dra"/>
                                                     <constraint firstItem="hRR-DM-gpb" firstAttribute="leading" secondItem="tkv-R3-vJZ" secondAttribute="leading" constant="30" id="ITD-A2-a2U"/>
                                                     <constraint firstItem="bq6-X2-Xst" firstAttribute="leading" secondItem="tkv-R3-vJZ" secondAttribute="leading" id="LIE-mv-MYE"/>
                                                     <constraint firstAttribute="trailing" secondItem="zTj-vQ-Nes" secondAttribute="trailing" id="P4j-yD-Pog"/>
                                                     <constraint firstItem="Dgx-Fv-Zbh" firstAttribute="top" secondItem="bq6-X2-Xst" secondAttribute="bottom" id="Rkh-aZ-RXq"/>
                                                     <constraint firstAttribute="trailing" secondItem="G8S-h5-d2R" secondAttribute="trailing" constant="30" id="Tls-5T-2fw"/>
+                                                    <constraint firstItem="Ngy-9o-r6f" firstAttribute="top" secondItem="Dgx-Fv-Zbh" secondAttribute="bottom" constant="10" id="VsS-L5-lKs"/>
                                                     <constraint firstItem="bq6-X2-Xst" firstAttribute="top" secondItem="z9f-Bz-CMz" secondAttribute="bottom" constant="5" id="XzH-o4-fpZ"/>
                                                     <constraint firstItem="DJD-kK-Kw9" firstAttribute="centerY" secondItem="z9f-Bz-CMz" secondAttribute="centerY" id="aBI-QI-F15"/>
                                                     <constraint firstAttribute="trailing" secondItem="Dgx-Fv-Zbh" secondAttribute="trailing" id="deO-4G-drP"/>
                                                     <constraint firstItem="Dgx-Fv-Zbh" firstAttribute="leading" secondItem="tkv-R3-vJZ" secondAttribute="leading" id="fi4-Te-Iix"/>
                                                     <constraint firstAttribute="trailing" secondItem="bq6-X2-Xst" secondAttribute="trailing" id="g0W-NW-4J4"/>
-                                                    <constraint firstItem="hRR-DM-gpb" firstAttribute="top" secondItem="Dgx-Fv-Zbh" secondAttribute="bottom" constant="30" id="g19-go-bRD"/>
+                                                    <constraint firstItem="Ngy-9o-r6f" firstAttribute="leading" secondItem="tkv-R3-vJZ" secondAttribute="leading" constant="50" id="hOp-fz-TO1"/>
                                                     <constraint firstAttribute="trailing" secondItem="z9f-Bz-CMz" secondAttribute="trailing" constant="30" id="jql-O0-LjY"/>
                                                     <constraint firstItem="DJD-kK-Kw9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tkv-R3-vJZ" secondAttribute="leading" constant="20" symbolic="YES" id="m6X-Ku-QXG"/>
                                                     <constraint firstItem="z9f-Bz-CMz" firstAttribute="top" secondItem="zTj-vQ-Nes" secondAttribute="bottom" constant="30" id="ud3-H4-w6T"/>
@@ -1890,6 +1906,7 @@ E-Mail : info@sos.com</string>
                         <outlet property="btnPayCasa" destination="hRR-DM-gpb" id="PfG-pz-AZw"/>
                         <outlet property="btnPayOnline" destination="G8S-h5-d2R" id="svn-Ra-lmU"/>
                         <outlet property="headerView" destination="f0O-A5-0Ys" id="NkQ-qC-C5T"/>
+                        <outlet property="labelTotalPrice" destination="yiH-r6-Yab" id="jCu-o7-ilB"/>
                         <outlet property="tableViewHeightConstraint" destination="63O-sA-VDQ" id="AMq-46-I2D"/>
                         <outlet property="tableview" destination="Dgx-Fv-Zbh" id="jkv-pX-kkt"/>
                         <outlet property="viewContainer" destination="tkv-R3-vJZ" id="KsD-O2-gy5"/>

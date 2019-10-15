@@ -23,5 +23,6 @@ public enum ServiceEndPoint: String {
     case UploadPicture = "/api/customer/upload-profile-picture"
     case OrderList = "/api/order/order-list"
     case OrderListDetail = "/api/order/order-detail-list?order_Id=%0"
+    case OfferList = "/api/offer/offer-list"
 
 }

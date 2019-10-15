@@ -18,10 +18,28 @@ class MyOrdersViewController: BaseViewController {
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var btnPayCasa: UIButton!
     @IBOutlet weak var btnPayOnline: UIButton!
+    @IBOutlet weak var labelTotalPrice: UILabel!
+    
+    public static var qrCodeRestaurantId : Int = 0
+    public static var qrCodeTableId : Int = 0
+    
+    
+    
+    var myOrdersResponseModel : OrderListDetailResponseModel? {
+        didSet{
+            self.tableview.delegate = self
+            self.tableview.dataSource = self
+            self.tableview.reloadData()
+            self.tableViewHeightConstraint.constant = (self.tableview.contentSize.height)
+        }
+    }
     
     override func viewDidLoad() {
 
+        self.labelTotalPrice.text = "0.0 \(Constants.tlIconString)"
+            
         self.viewContainer.addShadow()
+        self.viewContainer.layer.cornerRadius = 7.0
         
         self.btnPayCasa.layer.cornerRadius = 7.0
         self.btnPayCasa.layer.masksToBounds = true
@@ -33,42 +51,48 @@ class MyOrdersViewController: BaseViewController {
         self.tableview.register(MyOrdersSubTableViewCell.nib, forCellReuseIdentifier: MyOrdersSubTableViewCell.identifier)
         self.tableview.delegate = self
         self.tableview.dataSource = self
-        self.tableview.estimatedRowHeight = 70
         self.tableview.reloadData()
         self.tableview.isScrollEnabled = false
-        self.tableViewHeightConstraint.constant = (self.tableview.contentSize.height)
         
-        NetworkManager.sendGetRequest(url: Constants.BASE_SERVICE_URL, endPoint: .OrderList, method: .get, parameters: [""]) { (response : BaseResponse<OrderListResponseModel>) in
+        NetworkManager.sendHeaderRequest(url: Constants.BASE_SERVICE_URL, endPoint: .OfferList, method: .get, headerKeys: ["QRCodeRestaurantId","QRCodeTableId"],headerValues: ["\(self.userDefaultsData.getMenuQRCodeRestaurantID() ?? 0)","\(self.userDefaultsData.getMenuQRCodeTableID() ?? 0)"]) { (response : BaseResponse<OrderListDetailResponseModel>) in
             if response.statu ?? false {
-                NetworkManager.sendGetRequest(url: Constants.BASE_SERVICE_URL, endPoint: .OrderListDetail, method: .get, parameters: ["\(response.dataArray?.first?.orderId ?? 1)"]) { (response : BaseResponse<OrderListDetailResponseModel>) in
-                    if response.statu ?? false {
-                        
-                    }
-                }
+                self.myOrdersResponseModel = response.dataObject
+                self.labelTotalPrice.text = "\(self.myOrdersResponseModel?.totalPrice ?? 0.0)"
             }
         }
-}
+    }
     override func viewDidLayoutSubviews() {
-        print("")
+        self.tableViewHeightConstraint.constant = (self.tableview.contentSize.height)
     }
 }
 extension MyOrdersViewController : ExpyTableViewDelegate,ExpyTableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyOrdersSubTableViewCell.identifier, for: indexPath) as! MyOrdersSubTableViewCell
+        if indexPath.row == 1 {
+           cell.setConfiguration(title: "Sipariş Detayı", desc: self.myOrdersResponseModel?.menuItems?[indexPath.section].itemIngredients ?? "")
+        }
+        else if indexPath.row == 2{
+            cell.setConfiguration(title: "Sipariş Notu", desc: self.myOrdersResponseModel?.menuItems?[indexPath.section].orderNote ?? "")
+        }
         return cell
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return ((self.myOrdersResponseModel?.menuItems?.count ?? 0))
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
     
     func tableView(_ tableView: ExpyTableView, expandableCellForSection section: Int) -> UITableViewCell {
         // This cell will be displayed at IndexPath with (section: section and row: 0)
         let cell = tableView.dequeueReusableCell(withIdentifier: MenuItemTableViewCell.identifier) as! MenuItemTableViewCell
-        cell.setConfigurationModel(name: "akif", price: "1230", count: "2",alwaysPrice: 3,isDetailHidden: true)
+        cell.setConfigurationModel(name: self.myOrdersResponseModel?.menuItems?[section].itemName ?? "", price: "\(self.myOrdersResponseModel?.menuItems?[section].price ?? 0)", count: "\(self.myOrdersResponseModel?.menuItems?[section].quantity ?? 0)",alwaysPrice: self.myOrdersResponseModel?.menuItems?[section].price ?? 0.0,isDetailHidden: true,isDeletedButtonHidden: true)
+             cell.qrCodeRestaurantId = self.userDefaultsData.getMenuQRCodeRestaurantID()
+             cell.qrCodeTableId = self.userDefaultsData.getMenuQRCodeTableID()
+             cell.orderNote = self.myOrdersResponseModel?.menuItems?[section].orderNote ?? ""
+            cell.menuItemID = self.myOrdersResponseModel?.menuItems?[section].menuItem_Id ?? 0
+            cell.delegate = self
         return cell
     }
     
@@ -77,33 +101,33 @@ extension MyOrdersViewController : ExpyTableViewDelegate,ExpyTableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-            return 92.0
-        }
-        else{
-            return UITableView.automaticDimension
-        }
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: ExpyTableView, expyState state: ExpyState, changeForSection section: Int) {
-        UIView.animate(withDuration: 1.2, animations: {
-            self.tableViewHeightConstraint.constant = (self.tableview.contentSize.height)
-        }) { (finished) in
-        }
         switch state {
         case .willExpand:
             print("WILL EXPAND")
+            UIView.animate(withDuration: 1.2, animations: {
+                self.tableViewHeightConstraint.constant = (self.tableview.contentSize.height)
+            }) { (finished) in
+            }
             
         case .willCollapse:
             print("WILL COLLAPSE")
+            UIView.animate(withDuration: 1.2, animations: {
+                self.tableViewHeightConstraint.constant = (self.tableview.contentSize.height)
+            }) { (finished) in
+            }
             
         case .didExpand:
             print("DID EXPAND")
+            self.tableViewHeightConstraint.constant = (self.tableview.contentSize.height)
             
         case .didCollapse:
             print("DID COLLAPSE")
+            self.tableViewHeightConstraint.constant = (self.tableview.contentSize.height)
         }
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -115,6 +139,16 @@ extension MyOrdersViewController : ExpyTableViewDelegate,ExpyTableViewDataSource
         if indexPath.row != 0 {
             
         }
+        self.tableview.reloadData()
     }
-    
+}
+extension MyOrdersViewController : AgainTableViewReloadDelegate{
+    func againTableViewReload() {
+        NetworkManager.sendHeaderRequest(url: Constants.BASE_SERVICE_URL, endPoint: .OfferList, method: .get, headerKeys: ["QRCodeRestaurantId","QRCodeTableId"],headerValues: ["\(self.userDefaultsData.getMenuQRCodeRestaurantID() ?? 0)","\(self.userDefaultsData.getMenuQRCodeTableID() ?? 0)"]) { (response : BaseResponse<OrderListDetailResponseModel>) in
+            if response.statu ?? false {
+                self.myOrdersResponseModel = response.dataObject
+                self.labelTotalPrice.text = "\(self.myOrdersResponseModel?.totalPrice ?? 0.0)"
+            }
+        }
+    }
 }

@@ -17,6 +17,8 @@ public class Defaults{
         case RefreshToken
         case LoginState
         case MenuState
+        case QRCODERestaurantID
+        case QRCODETableID
     }
     
     public init(){}
@@ -121,6 +123,36 @@ public class Defaults{
         return data
     }
     
+    public func saveMenuQRCodeRestaurantID(data:Int){
+           let preferences = UserDefaults.standard
+           preferences.set( data , forKey:getIdentifier(type: .QRCODERestaurantID))
+           preferences.synchronize()
+    }
+       
+       public func getMenuQRCodeRestaurantID() -> Int! {   // 1- QR okutulmamış   //2- QR okutulmuş
+           let preferences = UserDefaults.standard
+           if preferences.object(forKey: getIdentifier(type: .QRCODERestaurantID)) == nil {
+               return nil
+           }
+           let data:Int = preferences.value(forKey: getIdentifier(type: .QRCODERestaurantID)) as! Int
+           return data
+    }
+   
+    public func saveMenuQRCodeTableID(data:Int){
+           let preferences = UserDefaults.standard
+           preferences.set( data , forKey:getIdentifier(type: .QRCODETableID))
+           preferences.synchronize()
+    }
+       
+       public func getMenuQRCodeTableID() -> Int! {   // 1- QR okutulmamış   //2- QR okutulmuş
+           let preferences = UserDefaults.standard
+           if preferences.object(forKey: getIdentifier(type: .QRCODETableID)) == nil {
+               return nil
+           }
+           let data:Int = preferences.value(forKey: getIdentifier(type: .QRCODETableID)) as! Int
+           return data
+    }
+    
     private  func  getIdentifier(type:DefaultsType)->String {
         switch type {
         case .Token:
@@ -135,6 +167,10 @@ public class Defaults{
             return "LoginState"
         case .MenuState:
             return "MenuState"
+        case .QRCODERestaurantID:
+            return "QRCODERestaurantID"
+        case .QRCODETableID:
+            return "QRCODETableID"
         }
     }
 }

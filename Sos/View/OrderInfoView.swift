@@ -97,7 +97,7 @@ public class OrderInfoView: UIView {
 extension OrderInfoView : UITableViewDelegate,UITableViewDataSource{
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MenuItemTableViewCell.identifier, for: indexPath) as! MenuItemTableViewCell
-        cell.setConfigurationModel(name: self.name ?? "", price: self.price ?? "", count: self.count ?? "1",alwaysPrice: Double(self.price!)!)
+        cell.setConfigurationModel(name: self.name ?? "", price: self.price ?? "", count: self.count ?? "1",alwaysPrice: Double(self.price!)!,isDetailHidden: false,isDeletedButtonHidden: false)
         cell.qrCodeRestaurantId = self.qrCodeRestaurantID
         cell.qrCodeTableId = self.qrCodeTableID
         cell.orderNote = self.txtViewOrderInfo.text
@@ -116,5 +116,4 @@ extension OrderInfoView : UITableViewDelegate,UITableViewDataSource{
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
 }

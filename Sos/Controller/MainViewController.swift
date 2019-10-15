@@ -27,6 +27,8 @@ class MainViewController: BaseViewController,AVCaptureMetadataOutputObjectsDeleg
         let vc = self.sosReturnViewController(type: .MenuViewController) as! MenuViewController
         vc.qrCodeTableID = 1
         vc.qrCodeRestaurantID = 1
+        self.userDefaultsData.saveMenuQRCodeTableID(data: 1)
+        self.userDefaultsData.saveMenuQRCodeRestaurantID(data: 1)
         self.sosPushViewController(viewController: vc)
     }
     
@@ -168,6 +170,8 @@ class MainViewController: BaseViewController,AVCaptureMetadataOutputObjectsDeleg
         let vc = self.sosReturnViewController(type: .MenuViewController) as! MenuViewController
         vc.qrCodeTableID = qrCodeTableId
         vc.qrCodeRestaurantID = qrCodeRestaurantId
+        self.userDefaultsData.saveMenuQRCodeTableID(data: qrCodeTableId)
+        self.userDefaultsData.saveMenuQRCodeRestaurantID(data: qrCodeRestaurantId)
         self.sosPushViewController(viewController: vc)
     }
     func showAlertWithFunction(qrCode : String){

@@ -34,6 +34,7 @@ struct OrderListDetailResponseModel : Mappable {
         totalPrice <- map["TotalPrice"]
         discount <- map["Discount"]
         finalPrice <- map["FinalPrice"]
+        totalPrice <- map["TotalPrice"]
         menuItems <- map["MenuItems"]
     }
 

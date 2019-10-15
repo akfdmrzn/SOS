@@ -31,4 +31,9 @@ class MyOrdersSubTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setConfiguration(title : String,desc : String){
+        self.labelTitle.text = title
+        self.labelDesc.text = desc
+    }
+    
 }
